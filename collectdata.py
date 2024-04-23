@@ -16,7 +16,9 @@ for i in range(65,91):
     if not os.path.exists(f'{directory}/{letter}'):
         os.mkdir(f'{directory}/{letter}')
 
-
+for digit in range(10):
+    if not os.path.exists(f'{directory}/{digit}'):
+        os.mkdir(f'{directory}/{digit}')
 
 
 import os
@@ -51,7 +53,17 @@ while True:
              'x': len(os.listdir(directory+"/X")),
              'y': len(os.listdir(directory+"/Y")),
              'z': len(os.listdir(directory+"/Z")),
-             'blank': len(os.listdir(directory+"/blank"))
+             'blank': len(os.listdir(directory+"/blank")),
+              '0': len(os.listdir(directory+"/0")),
+             '1': len(os.listdir(directory+"/1")),
+             '2': len(os.listdir(directory+"/2")),
+             '3': len(os.listdir(directory+"/3")),
+             '4': len(os.listdir(directory+"/4")),
+             '5': len(os.listdir(directory+"/5")),
+             '6': len(os.listdir(directory+"/6")),
+             '7': len(os.listdir(directory+"/7")),
+             '8': len(os.listdir(directory+"/8")),
+             '9': len(os.listdir(directory+"/9")),
              }
 
     row = frame.shape[1]
@@ -117,6 +129,24 @@ while True:
         cv2.imwrite(os.path.join(directory+'Z/'+str(count['z']))+'.jpg',frame)
     if interrupt & 0xFF == ord('.'):
         cv2.imwrite(os.path.join(directory+'blank/' + str(count['blank']))+ '.jpg',frame)
-
-
+    if interrupt & 0xFF == ord('0'):
+        cv2.imwrite(os.path.join(directory+'0/'+str(count['0']))+'.jpg',frame)
+    if interrupt & 0xFF == ord('1'):
+        cv2.imwrite(os.path.join(directory+'1/'+str(count['1']))+'.jpg',frame)
+    if interrupt & 0xFF == ord('2'):
+        cv2.imwrite(os.path.join(directory+'2/'+str(count['2']))+'.jpg',frame)
+    if interrupt & 0xFF == ord('3'):
+        cv2.imwrite(os.path.join(directory+'3/'+str(count['3']))+'.jpg',frame)
+    if interrupt & 0xFF == ord('4'):
+        cv2.imwrite(os.path.join(directory+'4/'+str(count['4']))+'.jpg',frame)
+    if interrupt & 0xFF == ord('5'):
+        cv2.imwrite(os.path.join(directory+'5/'+str(count['5']))+'.jpg',frame)
+    if interrupt & 0xFF == ord('6'):
+        cv2.imwrite(os.path.join(directory+'6/'+str(count['6']))+'.jpg',frame)
+    if interrupt & 0xFF == ord('7'):
+        cv2.imwrite(os.path.join(directory+'7/'+str(count['7']))+'.jpg',frame)
+    if interrupt & 0xFF == ord('8'):
+        cv2.imwrite(os.path.join(directory+'8/'+str(count['8']))+'.jpg',frame)
+    if interrupt & 0xFF == ord('9'):
+        cv2.imwrite(os.path.join(directory+'9/'+str(count['9']))+'.jpg',frame)
     

@@ -2,11 +2,20 @@ from keras.models import model_from_json
 import cv2
 import numpy as np
 
-json_file = open("signlanguagedetectionmodel48x48.json", "r")
-model_json = json_file.read()
-json_file.close()
+import json
+
+
+# Load model architecture from JSON file
+with open("signlanguagedetection2.json", "r") as json_file:
+    model_json = json_file.read()
+
+# Load model from JSON
 model = model_from_json(model_json)
-model.load_weights("signlanguagedetectionmodel48x48.h5")
+
+# Load weights into the model
+model.load_weights("signlanguagedetection2.h5")
+
+
 
 def extract_features(image):
     feature = np.array(image)
